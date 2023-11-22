@@ -127,7 +127,7 @@
 						<div class="card" th:object="${stocks[0]}">
 							<img class="card-img-top" th:src="@{${logos[0]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[0].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[0].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[0].lastPrice}"></p>
 									Percent Change:<p
@@ -150,7 +150,7 @@
 						<div class="card" th:object="${stocks[1]}">
 							<img class="card-img-top" th:src="@{${logos[1]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[1].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[1].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[1].lastPrice}"></p>
 									Percent Change:<p
@@ -170,7 +170,7 @@
 						<div class="card" th:object="${stocks[2]}">
 							<img class="card-img-top" th:src="@{${logos[2]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[2].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[2].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[2].lastPrice}"></p>
 									Percent Change:<p
@@ -190,7 +190,7 @@
 						<div class="card" th:object="${stocks[3]}">
 							<img class="card-img-top" th:src="@{${logos[3]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[3].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[3].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[3].lastPrice}"></p>
 									Percent Change:<p
@@ -216,7 +216,7 @@
 						<div class="card" th:object="${stocks[4]}">
 							<img class="card-img-top" th:src="@{${logos[4]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[4].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[4].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[4].lastPrice}"></p>
 									Percent Change:<p
@@ -236,7 +236,7 @@
 						<div class="card" th:object="${stocks[5]}">
 							<img class="card-img-top" th:src="@{${logos[5]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[5].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[5].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[5].lastPrice}"></p>
 									Percent Change:<p
@@ -256,7 +256,7 @@
 						<div class="card" th:object="${stocks[6]}">
 							<img class="card-img-top" th:src="@{${logos[6]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[6].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[6].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[6].lastPrice}"></p>
 									Percent Change:<p
@@ -276,7 +276,7 @@
 						<div class="card" th:object="${stocks[7]}">
 							<img class="card-img-top" th:src="@{${logos[7]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[7].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[7].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[7].lastPrice}"></p>
 									Percent Change:<p
@@ -303,7 +303,7 @@
 						<div class="card" th:object="${stocks[8]}">
 							<img class="card-img-top" th:src="@{${logos[8]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[8].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[8].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[8].lastPrice}"></p>
 									Percent Change:<p
@@ -323,7 +323,7 @@
 						<div class="card" th:object="${stocks[9]}">
 							<img class="card-img-top" th:src="@{${logos[9]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[9].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[9].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[9].lastPrice}"></p>
 									Percent Change:<p
@@ -343,7 +343,7 @@
 						<div class="card" th:object="${stocks[10]}">
 							<img class="card-img-top" th:src="@{${logos[10]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[10].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[10].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[10].lastPrice}"></p>
 									Percent Change:<p
@@ -363,7 +363,7 @@
 						<div class="card" th:object="${stocks[11]}">
 							<img class="card-img-top" th:src="@{${logos[11]}}" size="120" alt="Card image">
 							<div class="card-body">
-								<h4 class="card-title"><span th:text="${stocks[11].name}"></span></h4>
+								<h4 class="card-title"><span th:text="${stocks[11].displayName}"></span></h4>
 								<div class="card-text">
 									Price:<p th:text="${stocks[11].lastPrice}"></p>
 									Percent Change:<p

@@ -2,16 +2,19 @@ package com.neu.edu.stocktrading.model;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class StockAPIBean
 {
 
     private String symbol;
     private String exchange;
-    private String name;
+    private String displayName;
     private String dayCode;
     private String serverTimestamp;
     private String mode;
-    private String lastPrice;
+    private String postMarketPrice;
     private String tradeTimestamp;
     private String netChange;
     private String percentChange;
@@ -22,23 +25,23 @@ public class StockAPIBean
     private String close;
     private String flag;
     private String volume;
-    private String fiftyTwoWkHigh = "0.0";
-    private String fiftyTwoWkHighDate;
-    private String fiftyTwoWkLow = "0.0";
-    private String fiftyTwoWkLowDate;
+    private String fiftyTwoWeekHigh = "0.0";
+    private String fiftyTwoWeekHighDate;
+    private String fiftyTwoWeekLow = "0.0";
+    private String fiftyTwoWeekLowDate;
 
 
     public StockAPIBean() {
     }
 
-    public StockAPIBean(String symbol, String exchange, String name, String dayCode, String serverTimestamp, String mode, String lastPrice, String tradeTimestamp, String netChange, String percentChange, String unitCode, String open, String high, String low, String close, String flag, String volume, String fiftyTwoWkHigh, String fiftyTwoWkHighDate, String fiftyTwoWkLow, String fiftyTwoWkLowDate) {
+    public StockAPIBean(String symbol, String exchange, String displayName, String dayCode, String serverTimestamp, String mode, String postMarketPrice, String tradeTimestamp, String netChange, String percentChange, String unitCode, String open, String high, String low, String close, String flag, String volume, String fiftyTwoWeekHigh, String fiftyTwoWeekHighDate, String fiftyTwoWeekLow, String fiftyTwoWeekLowDate) {
         this.symbol = symbol;
         this.exchange = exchange;
-        this.name = name;
+        this.displayName = displayName;
         this.dayCode = dayCode;
         this.serverTimestamp = serverTimestamp;
         this.mode = mode;
-        this.lastPrice = lastPrice;
+        this.postMarketPrice = postMarketPrice;
         this.tradeTimestamp = tradeTimestamp;
         this.netChange = netChange;
         this.percentChange = percentChange;
@@ -49,10 +52,10 @@ public class StockAPIBean
         this.close = close;
         this.flag = flag;
         this.volume = volume;
-        this.fiftyTwoWkHigh = fiftyTwoWkHigh;
-        this.fiftyTwoWkHighDate = fiftyTwoWkHighDate;
-        this.fiftyTwoWkLow = fiftyTwoWkLow;
-        this.fiftyTwoWkLowDate = fiftyTwoWkLowDate;
+        this.fiftyTwoWeekHigh = fiftyTwoWeekHigh;
+        this.fiftyTwoWeekHighDate = fiftyTwoWeekHighDate;
+        this.fiftyTwoWeekLow = fiftyTwoWeekLow;
+        this.fiftyTwoWeekLowDate = fiftyTwoWeekLowDate;
     }
 
     public String getSymbol() {
@@ -71,12 +74,12 @@ public class StockAPIBean
         this.exchange = exchange;
     }
 
-    public String getName() {
-        return this.name;
+    public String getdisplayName() {
+        return this.displayName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setdisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getDayCode() {
@@ -103,12 +106,12 @@ public class StockAPIBean
         this.mode = mode;
     }
 
-    public String getLastPrice() {
-        return this.lastPrice;
+    public String getpostMarketPrice() {
+        return this.postMarketPrice;
     }
 
-    public void setLastPrice(String lastPrice) {
-        this.lastPrice = lastPrice;
+    public void setpostMarketPrice(String postMarketPrice) {
+        this.postMarketPrice = postMarketPrice;
     }
 
     public String getTradeTimestamp() {
@@ -191,36 +194,36 @@ public class StockAPIBean
         this.volume = volume;
     }
 
-    public String getFiftyTwoWkHigh() {
-        return this.fiftyTwoWkHigh;
+    public String getfiftyTwoWeekHigh() {
+        return this.fiftyTwoWeekHigh;
     }
 
-    public void setFiftyTwoWkHigh(String fiftyTwoWkHigh) {
-        this.fiftyTwoWkHigh = fiftyTwoWkHigh;
+    public void setfiftyTwoWeekHigh(String fiftyTwoWeekHigh) {
+        this.fiftyTwoWeekHigh = fiftyTwoWeekHigh;
     }
 
-    public String getFiftyTwoWkHighDate() {
-        return this.fiftyTwoWkHighDate;
+    public String getfiftyTwoWeekHighDate() {
+        return this.fiftyTwoWeekHighDate;
     }
 
-    public void setFiftyTwoWkHighDate(String fiftyTwoWkHighDate) {
-        this.fiftyTwoWkHighDate = fiftyTwoWkHighDate;
+    public void setfiftyTwoWeekHighDate(String fiftyTwoWeekHighDate) {
+        this.fiftyTwoWeekHighDate = fiftyTwoWeekHighDate;
     }
 
-    public String getFiftyTwoWkLow() {
-        return this.fiftyTwoWkLow;
+    public String getfiftyTwoWeekLow() {
+        return this.fiftyTwoWeekLow;
     }
 
-    public void setFiftyTwoWkLow(String fiftyTwoWkLow) {
-        this.fiftyTwoWkLow = fiftyTwoWkLow;
+    public void setfiftyTwoWeekLow(String fiftyTwoWeekLow) {
+        this.fiftyTwoWeekLow = fiftyTwoWeekLow;
     }
 
-    public String getFiftyTwoWkLowDate() {
-        return this.fiftyTwoWkLowDate;
+    public String getfiftyTwoWeekLowDate() {
+        return this.fiftyTwoWeekLowDate;
     }
 
-    public void setFiftyTwoWkLowDate(String fiftyTwoWkLowDate) {
-        this.fiftyTwoWkLowDate = fiftyTwoWkLowDate;
+    public void setfiftyTwoWeekLowDate(String fiftyTwoWeekLowDate) {
+        this.fiftyTwoWeekLowDate = fiftyTwoWeekLowDate;
     }
 
     public StockAPIBean symbol(String symbol) {
@@ -233,8 +236,8 @@ public class StockAPIBean
         return this;
     }
 
-    public StockAPIBean name(String name) {
-        this.name = name;
+    public StockAPIBean displayName(String displayName) {
+        this.displayName = displayName;
         return this;
     }
 
@@ -253,8 +256,8 @@ public class StockAPIBean
         return this;
     }
 
-    public StockAPIBean lastPrice(String lastPrice) {
-        this.lastPrice = lastPrice;
+    public StockAPIBean postMarketPrice(String postMarketPrice) {
+        this.postMarketPrice = postMarketPrice;
         return this;
     }
 
@@ -308,23 +311,23 @@ public class StockAPIBean
         return this;
     }
 
-    public StockAPIBean fiftyTwoWkHigh(String fiftyTwoWkHigh) {
-        this.fiftyTwoWkHigh = fiftyTwoWkHigh;
+    public StockAPIBean fiftyTwoWeekHigh(String fiftyTwoWeekHigh) {
+        this.fiftyTwoWeekHigh = fiftyTwoWeekHigh;
         return this;
     }
 
-    public StockAPIBean fiftyTwoWkHighDate(String fiftyTwoWkHighDate) {
-        this.fiftyTwoWkHighDate = fiftyTwoWkHighDate;
+    public StockAPIBean fiftyTwoWeekHighDate(String fiftyTwoWeekHighDate) {
+        this.fiftyTwoWeekHighDate = fiftyTwoWeekHighDate;
         return this;
     }
 
-    public StockAPIBean fiftyTwoWkLow(String fiftyTwoWkLow) {
-        this.fiftyTwoWkLow = fiftyTwoWkLow;
+    public StockAPIBean fiftyTwoWeekLow(String fiftyTwoWeekLow) {
+        this.fiftyTwoWeekLow = fiftyTwoWeekLow;
         return this;
     }
 
-    public StockAPIBean fiftyTwoWkLowDate(String fiftyTwoWkLowDate) {
-        this.fiftyTwoWkLowDate = fiftyTwoWkLowDate;
+    public StockAPIBean fiftyTwoWeekLowDate(String fiftyTwoWeekLowDate) {
+        this.fiftyTwoWeekLowDate = fiftyTwoWeekLowDate;
         return this;
     }
 
@@ -336,12 +339,12 @@ public class StockAPIBean
             return false;
         }
         StockAPIBean stockAPIBean = (StockAPIBean) o;
-        return Objects.equals(symbol, stockAPIBean.symbol) && Objects.equals(exchange, stockAPIBean.exchange) && Objects.equals(name, stockAPIBean.name) && Objects.equals(dayCode, stockAPIBean.dayCode) && Objects.equals(serverTimestamp, stockAPIBean.serverTimestamp) && Objects.equals(mode, stockAPIBean.mode) && Objects.equals(lastPrice, stockAPIBean.lastPrice) && Objects.equals(tradeTimestamp, stockAPIBean.tradeTimestamp) && Objects.equals(netChange, stockAPIBean.netChange) && Objects.equals(percentChange, stockAPIBean.percentChange) && Objects.equals(unitCode, stockAPIBean.unitCode) && Objects.equals(open, stockAPIBean.open) && Objects.equals(high, stockAPIBean.high) && Objects.equals(low, stockAPIBean.low) && Objects.equals(close, stockAPIBean.close) && Objects.equals(flag, stockAPIBean.flag) && Objects.equals(volume, stockAPIBean.volume) && Objects.equals(fiftyTwoWkHigh, stockAPIBean.fiftyTwoWkHigh) && Objects.equals(fiftyTwoWkHighDate, stockAPIBean.fiftyTwoWkHighDate) && Objects.equals(fiftyTwoWkLow, stockAPIBean.fiftyTwoWkLow) && Objects.equals(fiftyTwoWkLowDate, stockAPIBean.fiftyTwoWkLowDate);
+        return Objects.equals(symbol, stockAPIBean.symbol) && Objects.equals(exchange, stockAPIBean.exchange) && Objects.equals(displayName, stockAPIBean.displayName) && Objects.equals(dayCode, stockAPIBean.dayCode) && Objects.equals(serverTimestamp, stockAPIBean.serverTimestamp) && Objects.equals(mode, stockAPIBean.mode) && Objects.equals(postMarketPrice, stockAPIBean.postMarketPrice) && Objects.equals(tradeTimestamp, stockAPIBean.tradeTimestamp) && Objects.equals(netChange, stockAPIBean.netChange) && Objects.equals(percentChange, stockAPIBean.percentChange) && Objects.equals(unitCode, stockAPIBean.unitCode) && Objects.equals(open, stockAPIBean.open) && Objects.equals(high, stockAPIBean.high) && Objects.equals(low, stockAPIBean.low) && Objects.equals(close, stockAPIBean.close) && Objects.equals(flag, stockAPIBean.flag) && Objects.equals(volume, stockAPIBean.volume) && Objects.equals(fiftyTwoWeekHigh, stockAPIBean.fiftyTwoWeekHigh) && Objects.equals(fiftyTwoWeekHighDate, stockAPIBean.fiftyTwoWeekHighDate) && Objects.equals(fiftyTwoWeekLow, stockAPIBean.fiftyTwoWeekLow) && Objects.equals(fiftyTwoWeekLowDate, stockAPIBean.fiftyTwoWeekLowDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(symbol, exchange, name, dayCode, serverTimestamp, mode, lastPrice, tradeTimestamp, netChange, percentChange, unitCode, open, high, low, close, flag, volume, fiftyTwoWkHigh, fiftyTwoWkHighDate, fiftyTwoWkLow, fiftyTwoWkLowDate);
+        return Objects.hash(symbol, exchange, displayName, dayCode, serverTimestamp, mode, postMarketPrice, tradeTimestamp, netChange, percentChange, unitCode, open, high, low, close, flag, volume, fiftyTwoWeekHigh, fiftyTwoWeekHighDate, fiftyTwoWeekLow, fiftyTwoWeekLowDate);
     }
 
     @Override
@@ -349,11 +352,11 @@ public class StockAPIBean
         return "{" +
             " symbol='" + getSymbol() + "'" +
             ", exchange='" + getExchange() + "'" +
-            ", name='" + getName() + "'" +
+            ", displayName='" + getdisplayName() + "'" +
             ", dayCode='" + getDayCode() + "'" +
             ", serverTimestamp='" + getServerTimestamp() + "'" +
             ", mode='" + getMode() + "'" +
-            ", lastPrice='" + getLastPrice() + "'" +
+            ", postMarketPrice='" + getpostMarketPrice() + "'" +
             ", tradeTimestamp='" + getTradeTimestamp() + "'" +
             ", netChange='" + getNetChange() + "'" +
             ", percentChange='" + getPercentChange() + "'" +
@@ -364,10 +367,10 @@ public class StockAPIBean
             ", close='" + getClose() + "'" +
             ", flag='" + getFlag() + "'" +
             ", volume='" + getVolume() + "'" +
-            ", fiftyTwoWkHigh='" + getFiftyTwoWkHigh() + "'" +
-            ", fiftyTwoWkHighDate='" + getFiftyTwoWkHighDate() + "'" +
-            ", fiftyTwoWkLow='" + getFiftyTwoWkLow() + "'" +
-            ", fiftyTwoWkLowDate='" + getFiftyTwoWkLowDate() + "'" +
+            ", fiftyTwoWeekHigh='" + getfiftyTwoWeekHigh() + "'" +
+            ", fiftyTwoWeekHighDate='" + getfiftyTwoWeekHighDate() + "'" +
+            ", fiftyTwoWeekLow='" + getfiftyTwoWeekLow() + "'" +
+            ", fiftyTwoWeekLowDate='" + getfiftyTwoWeekLowDate() + "'" +
             "}";
     }
 

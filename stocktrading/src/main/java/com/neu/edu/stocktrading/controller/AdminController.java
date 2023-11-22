@@ -5,11 +5,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.neu.edu.stocktrading.model.User;
-import com.neu.edu.stocktrading.service.AdminService;
-import com.neu.edu.stocktrading.util.FileReaderUtil;
-import com.neu.edu.stocktrading.util.SessionManagementUtil;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +13,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.neu.edu.stocktrading.model.User;
+import com.neu.edu.stocktrading.service.AdminService;
+import com.neu.edu.stocktrading.util.FileReaderUtil;
+import com.neu.edu.stocktrading.util.SessionManagementUtil;
 
 
 @Controller

@@ -6,12 +6,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
-import com.neu.edu.stocktrading.model.Stock;
-import com.neu.edu.stocktrading.model.StockAPIBean;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
+import com.neu.edu.stocktrading.model.Stock;
+import com.neu.edu.stocktrading.model.StockAPIBean;
 
 @Component
 public class HomePageDAO {
@@ -25,7 +25,7 @@ public class HomePageDAO {
     public void saveStock(StockAPIBean stock) 
     {
         Stock st = new Stock();
-        st.setStockName(stock.getName());
+        st.setStockName(stock.getdisplayName());
         st.setStockSymbol(stock.getSymbol());
         st.setChange(stock.getPercentChange());
 
@@ -40,18 +40,18 @@ public class HomePageDAO {
         } else
             st.setSellingPrice(tempDouble);
 
-        if (stock.getFiftyTwoWkHigh() != null && !stock.getFiftyTwoWkHigh().equals("")) {
-            st.setHigh52(Double.parseDouble(stock.getFiftyTwoWkHigh()));
+        if (stock.getfiftyTwoWeekHigh() != null && !stock.getfiftyTwoWeekHigh().equals("")) {
+            st.setHigh52(Double.parseDouble(stock.getfiftyTwoWeekHigh()));
         } else
             st.setHigh52(tempDouble);
 
-        if (stock.getFiftyTwoWkLow() != null && !stock.getFiftyTwoWkLow().equals("")) {
-            st.setLow52(Double.parseDouble(stock.getFiftyTwoWkLow()));
+        if (stock.getfiftyTwoWeekLow() != null && !stock.getfiftyTwoWeekLow().equals("")) {
+            st.setLow52(Double.parseDouble(stock.getfiftyTwoWeekLow()));
         } else
             st.setLow52(tempDouble);
 
-        if (stock.getLastPrice() != null && !stock.getLastPrice().equals("")) {
-            st.setCurrentPrice(Double.parseDouble(stock.getLastPrice()));
+        if (stock.getpostMarketPrice() != null && !stock.getpostMarketPrice().equals("")) {
+            st.setCurrentPrice(Double.parseDouble(stock.getpostMarketPrice()));
         } else
             st.setCurrentPrice(tempDouble);
 
@@ -66,7 +66,7 @@ public class HomePageDAO {
     public void updateStock(StockAPIBean stock, Long id) 
     {
         Stock st = this.entityManager.find(Stock.class, id);
-        st.setStockName(stock.getName());
+        st.setStockName(stock.getdisplayName());
         st.setStockSymbol(stock.getSymbol());
 
         st.setChange(stock.getPercentChange());
@@ -84,27 +84,27 @@ public class HomePageDAO {
 
 
         if (stock.getLow() != null && !stock.getLow().equals("")) {
-            st.setBuyingPrice(Double.parseDouble(stock.getLastPrice()));
+            st.setBuyingPrice(Double.parseDouble(stock.getpostMarketPrice()));
         } else
             st.setBuyingPrice(tempDouble);
 
         if (stock.getHigh() != null && !stock.getHigh().equals("")) {
-            st.setSellingPrice(Double.parseDouble(stock.getLastPrice()));
+            st.setSellingPrice(Double.parseDouble(stock.getpostMarketPrice()));
         } else
             st.setSellingPrice(tempDouble);
 
-        if (stock.getFiftyTwoWkHigh() != null && !stock.getFiftyTwoWkHigh().equals("")) {
-            st.setHigh52(Double.parseDouble(stock.getFiftyTwoWkHigh()));
+        if (stock.getfiftyTwoWeekHigh() != null && !stock.getfiftyTwoWeekHigh().equals("")) {
+            st.setHigh52(Double.parseDouble(stock.getfiftyTwoWeekHigh()));
         } else
             st.setHigh52(tempDouble);
 
-        if (stock.getFiftyTwoWkLow() != null && !stock.getFiftyTwoWkLow().equals("")) {
-            st.setLow52(Double.parseDouble(stock.getFiftyTwoWkLow()));
+        if (stock.getfiftyTwoWeekLow() != null && !stock.getfiftyTwoWeekLow().equals("")) {
+            st.setLow52(Double.parseDouble(stock.getfiftyTwoWeekLow()));
         } else
             st.setLow52(tempDouble);
 
-        if (stock.getLastPrice() != null && !stock.getLastPrice().equals("")) {
-            st.setCurrentPrice(Double.parseDouble(stock.getLastPrice()));
+        if (stock.getpostMarketPrice() != null && !stock.getpostMarketPrice().equals("")) {
+            st.setCurrentPrice(Double.parseDouble(stock.getpostMarketPrice()));
         } else
             st.setCurrentPrice(tempDouble);
 

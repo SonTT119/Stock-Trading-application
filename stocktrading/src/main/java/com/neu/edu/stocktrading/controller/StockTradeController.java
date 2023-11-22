@@ -9,15 +9,6 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.mysql.cj.Session;
-import com.neu.edu.stocktrading.model.Trade;
-import com.neu.edu.stocktrading.model.Transaction;
-import com.neu.edu.stocktrading.model.User;
-import com.neu.edu.stocktrading.service.StockTradeService;
-import com.neu.edu.stocktrading.util.FileReaderUtil;
-import com.neu.edu.stocktrading.util.GeneratePdfUtil;
-import com.neu.edu.stocktrading.util.SessionManagementUtil;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +22,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.neu.edu.stocktrading.model.Trade;
+import com.neu.edu.stocktrading.model.Transaction;
+import com.neu.edu.stocktrading.model.User;
+import com.neu.edu.stocktrading.service.StockTradeService;
+import com.neu.edu.stocktrading.util.FileReaderUtil;
+import com.neu.edu.stocktrading.util.GeneratePdfUtil;
+import com.neu.edu.stocktrading.util.SessionManagementUtil;
+
+/**
+ * This class is the controller for stock trading operations.
+ */
 @Controller
 public class StockTradeController {
     private static final Logger logger = LoggerFactory.getLogger(StockTradeController.class);
@@ -41,6 +43,13 @@ public class StockTradeController {
     @Autowired
     private SessionManagementUtil sessionMgmtUtils;
     
+    /**
+     * Checks if an account is attached to the user.
+     * 
+     * @param request The HttpServletRequest object.
+     * @param stockSymbol The stock symbol as a HashMap.
+     * @return ResponseEntity containing the result of the account check.
+     */
     @PostMapping(value = "/check/account.htm" , consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> checkIfAccountAttached (HttpServletRequest request , @RequestBody HashMap<String, String> stockSymbol)
     {
